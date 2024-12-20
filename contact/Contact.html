@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brimpolo</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .responsive-image img {
+    width: 100%; 
+    height: 80vh; 
+    object-fit: cover; 
+}
+.col-md-6 input::placeholder{
+  color: #fafafc;
+}
+.col-md-6 textarea::placeholder{
+  color: #fff;
+}
+
+
+
+@media (max-width: 768px) {
+    .responsive-image img {
+        height: 40vh; 
+    }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #26211E; position: fixed; top: 0; width: 100%; z-index: 10;">
+    <div class="container">
+        <h1>
+            <a class="navbar-brand text-light" href="../index.html">
+                <img src="../img/Frame 1.png" alt="">
+                Brimbolo Security
+            </a>
+        </h1>
+      
+      <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <h5>
+                <a class="nav-link active text-light" aria-current="page"href="../index.html">Home</a>
+            </h5>
+          </li>
+          <li class="nav-item">
+            <h5>
+                <a class="nav-link active text-light" aria-current="page"href="../about/About.html">About</a>
+            </h5>
+          </li>
+          <li class="nav-item">
+            <h5>
+                <a class="nav-link active text-light" aria-current="page"href="./Contact.html">Contact</a>
+            </h5>
+          </li>
+          
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="responsive-image">
+    <img src="../img/contact.png" class="img-fluid w-100" alt="Responsive Image">
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <form id="contactForm">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-12">
+        <div class="mb-4  w-75 mx-auto">
+          <input type="text" style="background-color: #29324F; color: #fff;" placeholder="Name" class="form-control px-2 py-2" id="name" aria-describedby="emailHelp">
+          <span id="nameError" style="color: red; font-size: 15px; display: none;">Name is required</span>
+        </div>
+        <div class="mb-4 w-75 mx-auto">
+          <input type="email" style="background-color: #29324F; color: #fff;" placeholder="Email" class="form-control px-2 py-2" id="email">
+          <span id="emailError" style="color: red; font-size: 15px; display: none;">Valid email is required</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="mb-4  w-75 mx-auto">
+          <input type="tel" style="background-color: #29324F; color: #fff;" placeholder="Phone" class="form-control px-2 py-2" id="phone">
+          <span id="phoneError" style="color: red; font-size: 15px; display: none;">Phone number is required</span>
+        </div>
+        <div class="mb-4 w-75 mx-auto">
+          <textarea class="form-control px-2 py-2" style="background-color: #29324F; color: #fff;" placeholder="Message" rows="3" id="message"></textarea>
+          <span id="messageError" style="color: red; font-size: 15px; display: none;">Message is required</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary px-5 py-2" style="font-size: 20px; border-radius: 25px; background-color: #6C4928; border: none;">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<section class="">
+    <!-- Footer -->
+    <footer class="text-center text-white p-3" style="background-color: #252525;">
+        <div class="container p-4 d-flex justify-content-around align-items-center">
+          <a href="../index.html" style="text-decoration: none; color: white;"><h5>Home</h5></a>
+          <a href="../about/About.html" style="text-decoration: none; color: white;"><h5>About</h5></a>
+          <a href="./Contact.html" style="text-decoration: none; color: white;"><h5>Contact</h5></a>
+        </div>
+    <div class="text-center pb-2 text-light" >
+        © Brimbolo. All rights reserved
+        
+      </div>
+    </footer>
+    <!-- Footer -->
+  </section>
+    
+    
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var message = document.getElementById('message').value;
+  
+      var isValid = true; 
+      document.getElementById('nameError').style.display = 'none';
+      document.getElementById('emailError').style.display = 'none';
+      document.getElementById('phoneError').style.display = 'none';
+      document.getElementById('messageError').style.display = 'none';
+      
+
+      if (!name) {
+        isValid = false;
+        document.getElementById('nameError').style.display = 'block';
+      }
+  
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        isValid = false;
+        document.getElementById('emailError').style.display = 'block';
+      }
+  
+      if (!phone) {
+        isValid = false;
+        document.getElementById('phoneError').style.display = 'block';
+      }
+  
+      if (!message) {
+        isValid = false;
+        document.getElementById('messageError').style.display = 'block';
+      }
+  
+      if (isValid) {
+        alert('Form submitted successfully!');
+      }
+    });
+  
+    document.getElementById('name').addEventListener('input', function() {
+      if (this.value) {
+        document.getElementById('nameError').style.display = 'none';
+      }
+    });
+  
+    document.getElementById('email').addEventListener('input', function() {
+      if (this.value && this.value.includes('@') && this.value.includes('.')) {
+        document.getElementById('emailError').style.display = 'none';
+      }
+    });
+  
+    document.getElementById('phone').addEventListener('input', function() {
+      if (this.value) {
+        document.getElementById('phoneError').style.display = 'none';
+      }
+    });
+  
+    document.getElementById('message').addEventListener('input', function() {
+      if (this.value) {
+        document.getElementById('messageError').style.display = 'none';
+      }
+    });
+  </script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
